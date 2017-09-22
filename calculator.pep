@@ -17,7 +17,7 @@ menu:             .ascii "\nCalculator\n"
                   .ascii "\n N - NEG"
                   .ascii "\n Q - Quit\n\x00"
 choice:           .ascii "\n\nInput Option: \x00"
-invalid:          .ascii "\nInvalid!\x00"
+invalid:          .ascii "\nQuit\x00"
 
 
 ch:               .block 1
@@ -71,6 +71,6 @@ endif2:           cpba 'n', i  ; if (ch == 'n')
                   br loop
          
 endif3:           stro invalid,d ; print error
-                  br loop
-
+                  
+                  stop
                   .end         
